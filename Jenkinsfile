@@ -4,7 +4,7 @@ pipeline {
 
     parameters {
          string(name: 'tomcat_dev', defaultValue: '40.122.37.24', description: 'Staging Server')
-         string(name: 'tomcat_prod', defaultValue: '23.96.30.126', description: 'Production Server')
+         string(name: 'tomcat_prod', defaultValue: '40.117.82.78', description: 'Production Server')
     }
 
     triggers {
@@ -34,7 +34,7 @@ stages{
 
                 stage ("Deploy to Production"){
                     steps {
-                        sh "scp -i /home/talasila/mykeys/private **/target/*.war talasila@${params.tomcat_prod}:/var/lib/tomcat7/webapps"
+                        sh "scp -i /home/talasila/mykeys/private **/target/*.war talasila@${params.tomcat_prod}:/opt/tomcat/webapps"
                     }
                 }
             }
