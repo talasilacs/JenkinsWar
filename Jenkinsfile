@@ -32,11 +32,6 @@ stages{
                     }
                 }
 
-                stage ("Deploy to Production"){
-                    steps {
-                        sh "scp -i /home/talasila/mykeys/private **/target/*.war talasila@${params.tomcat_prod}:/home/talasila/mykeys/tomcat"
-                    }
-                }
             }
         }
     }
