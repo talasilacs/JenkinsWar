@@ -28,7 +28,7 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        sh "scp -i /home/talasila/mykeys/tomcat **/target/*.war talasila@${params.tomcat_dev}:/opt/tomcat/webapps"
+                        sh "scp -i /home/talasila/mykeys/private **/target/*.war talasila@${params.tomcat_dev}:/opt/tomcat/webapps"
                     }
                 }
                 stage ("Deploy to Production"){
